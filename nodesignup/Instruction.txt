@@ -1,0 +1,33 @@
+step 1: download mysql workbench to check : mysql --version
+step 2: create file nodesignup.
+      -> change the path as 
+      cd nodesinup
+      npm init
+      when prompt :
+        package name : ligin
+        entry point : login.js
+step 3: instal required packages :
+    npm install express --save
+    npm install express-session --save
+    npm install mysql --save
+step 4: Create file as this structure :
+    nodesignup/
+ ├── signup.html
+ ├── login.html
+ ├── login.js
+ └── static/
+     └── style.css
+step 5: Setup MySQL Database :
+    CREATE DATABASE nodelogin;
+USE nodelogin;
+CREATE TABLE IF NOT EXISTS accounts (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+ step 6: Run appication 
+      node login.js
+      http://localhost:3000
+
