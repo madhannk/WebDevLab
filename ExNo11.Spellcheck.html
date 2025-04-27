@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IRCTC Booking</title>
+  <style>
+    h2 {
+      color: #0078d7;
+      text-align: center;
+      background-color: lightcoral;
+      padding: 40px 0px;
+
+    }
+  </style>
+</head>
+<body>
+
+<h2>IRCTC Train Ticket Booking</h2>
+
+<form id="form">
+  <label>Name:</label><input type="text" spellcheck="true" required><br><br>
+  <label>From:</label><input type="text" id="from" required><br><br>
+  <label>To:</label><input type="text" id="to" required><br><br>
+  <label>Date:</label><input type="date" required><br><br>
+  <label>Time:</label><input type="time" required><br><br>
+  <label>Mobile:</label><input type="tel" pattern="[0-9]{10}" required><br><br>
+  <label>Email:</label><input type="email" required><br><br>
+  <label>Comment:</label><textarea rows="3" spellcheck="true"></textarea><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById("form").onsubmit = e => {
+    e.preventDefault();
+    const f = from.value.trim().toLowerCase(), t = to.value.trim().toLowerCase();
+    const places = ['tambaram','chennai egmore','katpadi','vellore','arakonam','coimbatore',
+      'chengalpattu','madurai','jolarpettai','salem','erode','tiruppur','villupuram',
+      'tiruchirapalli','dindigul','perambur','thanjavur','tirunelveli','nagerkoil','tiruvallur',
+      'avadi','perungulathur','mayiladuturai','hosur','nagapattinam','kumbakonam'];
+    
+    if (!places.includes(f) || !places.includes(t) || f === t)
+      alert("Please enter the place correctly");
+    else
+      alert(`Your journey starting at ${f} and ending at ${t} was successfully recorded.`);
+  };
+</script>
+
+</body>
+</html>
